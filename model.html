@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Evolution of NLP Models</title>
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0e1a; /* A deep, dark blue for the background */
+            color: #e0e0e0;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: -31px; /* Adjust based on padding and line position */
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #4f46e5; /* Indigo accent */
+            border: 4px solid #1e293b; /* Slate-800 for contrast */
+            z-index: 10;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.5); /* Slate-800 with transparency */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #818cf8, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            background-color: #374151; /* Gray-700 */
+            color: #d1d5db; /* Gray-300 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header Section -->
+    <header class="text-center py-16 md:py-24 px-4">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-white mb-4">
+            The Evolution of <span class="gradient-text">NLP Models</span>
+        </h1>
+        <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-400">
+            From simple word counts to models that can write, translate, and reason. Journey through the history of Natural Language Processing.
+        </p>
+    </header>
+
+    <!-- Main Content - Timeline -->
+    <main class="container mx-auto px-4 md:px-8 pb-24">
+        <div class="relative max-w-3xl mx-auto">
+            <!-- The timeline vertical bar -->
+            <div class="absolute left-0 h-full border-l-2 border-slate-700 ml-[-22px] md:ml-0 md:left-1/2 md:-translate-x-1/2"></div>
+
+            <!-- Timeline Item: Foundational Models -->
+            <div class="mb-12 md:flex md:justify-between md:items-center w-full">
+                <div class="md:w-5/12"></div>
+                <div class="hidden md:block w-10 text-center">
+                    <div class="relative inline-block">
+                        <div class="w-5 h-5 bg-indigo-600 rounded-full ring-4 ring-slate-800"></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-lg shadow-lg md:w-5/12">
+                    <h2 class="text-2xl font-bold text-white mb-2">Foundational Models</h2>
+                    <p class="text-sm text-indigo-400 font-semibold mb-4">Pre-2010s • Statistical Era</p>
+                    <p class="text-slate-300 mb-4">
+                        These models relied on statistical analysis of text. <strong>Bag-of-Words (BoW)</strong> represents text as an unordered collection of its words, disregarding grammar. <strong>TF-IDF</strong> improves on this by weighting words based on their frequency in a document versus their rarity across all documents. <strong>N-grams</strong> capture limited context by considering sequences of N consecutive words.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Bag-of-Words (BoW)</span>
+                        <span class="tag">TF-IDF</span>
+                        <span class="tag">N-grams</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item: Word Embeddings -->
+            <div class="mb-12 md:flex md:justify-between md:items-center w-full flex-row-reverse">
+                <div class="md:w-5/12"></div>
+                 <div class="hidden md:block w-10 text-center">
+                    <div class="relative inline-block">
+                        <div class="w-5 h-5 bg-indigo-600 rounded-full ring-4 ring-slate-800"></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-lg shadow-lg md:w-5/12">
+                    <h2 class="text-2xl font-bold text-white mb-2">Word Embeddings</h2>
+                    <p class="text-sm text-indigo-400 font-semibold mb-4">~2013 • The Semantic Leap</p>
+                    <p class="text-slate-300 mb-4">
+                        <strong>Word2Vec</strong> and <strong>GloVe</strong> revolutionized NLP by learning dense vector representations of words. Instead of sparse vectors, words were mapped to a low-dimensional space where semantic relationships (e.g., "king" - "man" + "woman" ≈ "queen") could be captured mathematically. This allowed models to understand meaning, not just frequency.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Word2Vec</span>
+                        <span class="tag">GloVe</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Timeline Item: Recurrent Neural Networks (RNNs) -->
+            <div class="mb-12 md:flex md:justify-between md:items-center w-full">
+                <div class="md:w-5/12"></div>
+                 <div class="hidden md:block w-10 text-center">
+                    <div class="relative inline-block">
+                        <div class="w-5 h-5 bg-indigo-600 rounded-full ring-4 ring-slate-800"></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-lg shadow-lg md:w-5/12">
+                    <h2 class="text-2xl font-bold text-white mb-2">Sequential Models</h2>
+                    <p class="text-sm text-indigo-400 font-semibold mb-4">~2014-2017 • Understanding Order</p>
+                    <p class="text-slate-300 mb-4">
+                        <strong>RNNs</strong> process text sequentially, using a hidden state to maintain a "memory" of previous words. However, they struggled with long-term dependencies. <strong>LSTMs</strong> and <strong>GRUs</strong> solved this with internal "gates" (like forget, input, and output gates) that carefully control what information is stored, discarded, or read from memory, enabling them to model long-range context.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">RNN</span>
+                        <span class="tag">LSTM</span>
+                        <span class="tag">GRU</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item: The Transformer -->
+            <div class="mb-12 md:flex md:justify-between md:items-center w-full flex-row-reverse">
+                <div class="md:w-5/12"></div>
+                 <div class="hidden md:block w-10 text-center">
+                    <div class="relative inline-block">
+                        <div class="w-5 h-5 bg-indigo-600 rounded-full ring-4 ring-slate-800"></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-lg shadow-lg md:w-5/12">
+                    <h2 class="text-2xl font-bold text-white mb-2">The Transformer</h2>
+                    <p class="text-sm text-indigo-400 font-semibold mb-4">2017 • "Attention Is All You Need"</p>
+                    <p class="text-slate-300 mb-4">
+                        This architecture discarded sequential processing for parallelization. Its core innovation, the <strong>self-attention mechanism</strong>, allows the model to weigh the importance of all other words in the input when encoding a specific word. This provides a much richer, more dynamic representation of context and, by removing recurrence, enabled training on vastly larger datasets.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Attention Mechanism</span>
+                        <span class="tag">Parallel Processing</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item: BERT -->
+            <div class="mb-12 md:flex md:justify-between md:items-center w-full">
+                <div class="md:w-5/12"></div>
+                 <div class="hidden md:block w-10 text-center">
+                    <div class="relative inline-block">
+                        <div class="w-5 h-5 bg-indigo-600 rounded-full ring-4 ring-slate-800"></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-lg shadow-lg md:w-5/12">
+                    <h2 class="text-2xl font-bold text-white mb-2">BERT</h2>
+                    <p class="text-sm text-indigo-400 font-semibold mb-4">2018 • Bidirectional Context</p>
+                    <p class="text-slate-300 mb-4">
+                        BERT uses the Transformer's encoder to learn deep bidirectional representations. It's pre-trained on two tasks: <strong>Masked Language Modeling (MLM)</strong>, where it predicts randomly hidden words in a sentence, forcing it to learn context from both left and right. The second is <strong>Next Sentence Prediction (NSP)</strong>. This approach creates powerful base models that can be quickly fine-tuned for a wide range of tasks.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Transformer Encoder</span>
+                        <span class="tag">Masked Language Model</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item: GPT -->
+            <div class="mb-12 md:flex md:justify-between md:items-center w-full flex-row-reverse">
+                <div class="md:w-5/12"></div>
+                 <div class="hidden md:block w-10 text-center">
+                    <div class="relative inline-block">
+                        <div class="w-5 h-5 bg-indigo-600 rounded-full ring-4 ring-slate-800"></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-lg shadow-lg md:w-5/12">
+                    <h2 class="text-2xl font-bold text-white mb-2">GPT Series</h2>
+                    <p class="text-sm text-indigo-400 font-semibold mb-4">2018-Present • Generative Powerhouses</p>
+                    <p class="text-slate-300 mb-4">
+                        GPT models leverage the Transformer's decoder architecture. They are autoregressive, meaning they are trained to predict the next word in a sequence based on the preceding words. This makes them exceptionally skilled at generating coherent, human-like text. The trend with GPT has been massive scaling in model size and training data, leading to powerful emergent capabilities like few-shot learning and complex reasoning.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Transformer Decoder</span>
+                        <span class="tag">Large-Scale Training</span>
+                        <span class="tag">Generative AI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 px-4 border-t border-slate-800">
+        <p class="text-slate-500">The rapid advancements in Natural Language Processing.</p>
+    </footer>
+
+</body>
+</html>

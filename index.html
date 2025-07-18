@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faq Chatbot</title>
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Main Chat Container -->
+    <div class="chat-container">
+
+        <!-- Header -->
+        <div class="chat-header">
+            <h3><i class="fas fa-robot"></i> FAQ Chatbot</h3>
+            <a href="model.html" title="More Info About NLP"><i class="fas fa-info-circle"></i></a>
+        </div>
+
+        <!-- Chat messages will be appended here -->
+        <div class="chat-box" id="chatBox">
+            <div class="chat-message bot-message">
+                Hello! How can I assist you today?
+            </div>
+        </div>
+
+        <!-- Section to show "Processing..." -->
+        <div class="processing-section" id="processingSection">
+            <div class="loader"></div>
+            <span>Generating response...</span>
+        </div>
+
+        <!-- User Input Area -->
+        <div class="chat-input-area">
+            <form id="chatForm" class="chat-input-form">
+                <textarea id="userInput" class="form-control" placeholder="Type your message here..."
+                    rows="1"></textarea>
+                <button type="submit" id="sendButton" class="btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // DOM Elements
+        const chatForm = document.getElementById('chatForm');
+        const userInput = document.getElementById('userInput');
+        const chatBox = document.getElementById('chatBox');
+        const sendButton = document.getElementById('sendButton');
+        const processingSection = document.getElementById('processingSection');
+
+        // --- Event Listeners ---
+
+        // Handle form submission
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const userMessage = userInput.value.trim();
+            if (userMessage) {
+                appendMessage(userMessage, 'user-message');
+                userInput.value = '';
+                userInput.style.height = 'auto'; // Reset height
+                toggleProcessing(true);
+                simulateBotResponse();
+            }
+        });
+
+        // Auto-resize textarea
+        userInput.addEventListener('input', () => {
+            userInput.style.height = 'auto';
+            userInput.style.height = (userInput.scrollHeight) + 'px';
+        });
+
+        // --- Functions ---
+
+        /**
+         * Appends a message to the chat box.
+         * @param {string} message - The message content.
+         * @param {string} type - The class for the message type ('user-message' or 'bot-message').
+         */
+        function appendMessage(message, type) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chat-message', type);
+            messageElement.textContent = message;
+            chatBox.appendChild(messageElement);
+            scrollToBottom();
+        }
+
+        /**
+         * Scrolls the chat box to the latest message.
+         */
+        function scrollToBottom() {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        /**
+         * Shows or hides the processing indicator.
+         * @param {boolean} show - True to show, false to hide.
+         */
+        function toggleProcessing(show) {
+            sendButton.disabled = show;
+            processingSection.style.display = show ? 'flex' : 'none';
+            if (show) {
+                scrollToBottom();
+            }
+        }
+
+        /**
+         * Simulates a bot response after a delay.
+         */
+        function simulateBotResponse() {
+            // This is where you would typically make an API call to your backend/chatbot service.
+            // We'll use a setTimeout to simulate the delay.
+            setTimeout(() => {
+                toggleProcessing(false);
+                const botResponse = "This is a simulated response. In a real application, this text would be generated by an AI model based on your query. [Model coming soon!]";
+                appendMessage(botResponse, 'bot-message');
+            }, 2500); // Simulate a 2.5-second processing time
+        }
+
+        // Initial scroll to bottom if there are pre-loaded messages
+        window.onload = () => {
+            scrollToBottom();
+            userInput.focus();
+        };
+
+    </script>
+
+</body>
+
+</html>
