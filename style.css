@@ -214,7 +214,7 @@
                 width: 85vw;   /* 85% of viewport width */
                 height: 80vh;  
                 border-radius: 15px;
-                /* margin-top:-30px; */
+                margin-top:-30px;
             }
 
             .chat-header {
