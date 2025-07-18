@@ -212,7 +212,7 @@
         @media (max-width: 768px) {
             .chat-container {
                 width: 85vw;   /* 85% of viewport width */
-                height: 80vh;  /* 85% of viewport height */
+                height: 75vh;  /* 85% of viewport height */
                 border-radius: 15px;
             }
 
