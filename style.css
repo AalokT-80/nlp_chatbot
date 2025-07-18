@@ -212,8 +212,9 @@
         @media (max-width: 768px) {
             .chat-container {
                 width: 85vw;   /* 85% of viewport width */
-                height: 75vh;  /* 85% of viewport height */
+                height: 80vh;  
                 border-radius: 15px;
+                /* margin-top:-30px; */
             }
 
             .chat-header {
