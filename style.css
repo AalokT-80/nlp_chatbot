@@ -208,36 +208,41 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 768px) {
-            .chat-container {
-                width: 85vw;   /* 85% of viewport width */
-                height: 80vh;  
-                border-radius: 15px;
-                margin-top:-30px;
-            }
+       /* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 85vw;    /* 85% of viewport width */
+        height: 80vh;
+        border-radius: 15px;
+        /* New properties for vertical centering */
+        position: absolute; /* Use absolute positioning */
+        top: 50%; /* Align top edge to the middle */
+        left: 50%; /* Align left edge to the middle */
+        transform: translate(-50%, -50%); /* Move back by half of its own width/height */
+        margin: auto; /* Ensure no external margins interfere */
+    }
 
-            .chat-header {
-                padding: 0.75rem 1rem;
-            }
+    .chat-header {
+        padding: 0.75rem 1rem;
+    }
 
-            .chat-header h3 {
-                font-size: 1rem;
-            }
+    .chat-header h3 {
+        font-size: 1rem;
+    }
 
-            .chat-header a i {
-                font-size: 1.3rem;
-            }
+    .chat-header a i {
+        font-size: 1.3rem;
+    }
 
-            .chat-box {
-                padding: 1rem;
-            }
+    .chat-box {
+        padding: 1rem;
+    }
 
-            #userInput {
-                font-size: 0.9rem; /* Adjust font size for mobile */
-            }
-            
-            #userInput::placeholder {
-                font-size: 0.9rem; /* Adjust placeholder font size for mobile */
-            }
-        }
+    #userInput {
+        font-size: 0.9rem; /* Adjust font size for mobile */
+    }
+    
+    #userInput::placeholder {
+        font-size: 0.9rem; /* Adjust placeholder font size for mobile */
+    }
+}
